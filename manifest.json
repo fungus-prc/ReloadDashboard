@@ -1,0 +1,18 @@
+{
+  "name": "Reload dashboard from the abyss",
+  "version": "1.0.0",
+  "description": "This chrome-extension inserts links for reloading dashboard on the Tumblr for each set of new posts.",
+  "manifest_version":2,
+  "icons": { "128": "reload_dashboard.png" },
+  "permissions": [
+    "*://www.tumblr.com/*","webRequest"
+  ],
+  "content_scripts": [ {
+    "js": ["ReloadDashboard.js"],
+    "matches": [ "*://www.tumblr.com/*" ]
+  } ],
+  "background": {
+    "scripts": ["ReceiveRequests.js"],
+    "persistent": true
+  }
+}
